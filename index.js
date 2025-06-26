@@ -13,15 +13,15 @@ conectarDB();
 
 app.use(cors());
 app.use(morgan('dev'));
-app.use(express.json()); 
+app.use(express.json());
 
 app.get('/', (req, res) => {
-res.json({ mensaje: 'La API funciona correctamente' });
+    res.json({ mensaje: 'La API funciona correctamente' });
 });
 
-const rutasTareas = require('./rutas/tareas');
-app.use('/api/tareas', rutasTareas);
+const rutasActividades = require('./rutas/actividades');
+app.use('/api/actividades', rutasActividades);
 
 app.listen(PORT, () => {
-console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
